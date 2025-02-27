@@ -1,11 +1,11 @@
 {
   "name": "javascripttest",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./backend/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "debug": "nodemon --inspect index.js"
+    "start": "nodemon ./backend/index.js",
+    "debug": "nodemon --inspect ./backend/index.js"
   },
   "keywords": [],
   "author": "",
