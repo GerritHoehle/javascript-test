@@ -1,8 +1,10 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# Ignore Visual Studio Code or IntelliJ IDEA project files and folders
+.idea/
+.vscode/
+
+# General system or temporary files to ignore (if applicable)
+*.log
+.DS_Store
+*.tmp
+
+# Add more entries here as needed for other environments or tools
