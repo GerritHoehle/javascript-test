@@ -16,10 +16,6 @@ const figuresModules = await loadModules(
     './inheritance/FiguresLegacyModule.js',
 );
 
-await new Promise((resolve, reject) => setTimeout(() => {
-    resolve();
-}, 1000));
-
 Object.entries(figuresModules).forEach(([modulePath, module]) => {
     testFigureModule({ moduleDescription: modulePath, module });
 });
