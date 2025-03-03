@@ -14,6 +14,7 @@ const testFigureModule = (await import('./inheritance/figures-tester.js')).testF
 const figuresModules = await loadModules(
     './inheritance/FiguresModule.js',
     './inheritance/FiguresLegacyModule.js',
+    './inheritance/FiguresArrowModule.js',
 );
 
 Object.entries(figuresModules).forEach(([modulePath, module]) => {

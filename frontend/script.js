@@ -3,11 +3,11 @@ function printHallo(text) {
 }
 
 class CountEventHandler {
-    constructor(element, handler = () => {
-    }) {
+    constructor(element, handler = () => { }) {
         this.element = element;
-        this.count = 0;
         this.handler = handler;
+
+        this.count = 0;
         this.registeredHandler = null;
     }
 
@@ -15,6 +15,7 @@ class CountEventHandler {
         this.registeredHandler = (event) => {
             this.count++;
             this.printCount();
+
             this.handler(event);
         };
 
@@ -33,14 +34,15 @@ class CountEventHandler {
     }
 
     printCount() {
-        console.log("count", this.count);
+        console.log("count ist", this.count);
     };
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const clickContainer = document.querySelector("#clickContainer");
 
-    const countToTenHandler = new CountEventHandler(clickContainer, (event) => {
+    const countHandlerCallback = (event) => {
+        console.log("clickContainer clicked");
         if (event.target.tagName === "P") {
             printHallo("target is a paragraph");
         }
@@ -49,7 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (countToTenHandler.count >= 10) {
             countToTenHandler.unregister("click");
         }
-    });
+    };
+
+    const countToTenHandler = new CountEventHandler(clickContainer, countHandlerCallback);
 
     countToTenHandler.register("click");
 });
